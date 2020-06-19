@@ -1,16 +1,10 @@
----
-nav:
-  title: Components
-  path: /components
----
-
 ## Foo
 
 Demo:
 
 ```tsx
-import React from "react";
-import { Foo } from "dumi-doc";
+import React from 'react';
+import { Foo } from 'sunshine';
 
 export default () => <Foo title="First Demo" />;
 ```

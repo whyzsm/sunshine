@@ -1,27 +1,17 @@
 {
   "private": true,
-  "name": "dumi-doc",
+  "name": "sunshine",
   "version": "1.0.0",
   "scripts": {
-    "dev": "cross-env BROWSER=none node ./packages/dumi/bin/dumi.js dev",
-    "watch": "father-build build --watch",
-    "doc:build": "cross-env BROWSER=none node ./packages/dumi/bin/dumi.js build",
-    "doc:deploy": "bash ./scripts/deploy_doc.sh",
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build",
-    "changelog": "lerna-changelog",
-    "clean": "lerna clean -y",
-    "test": "npm run test:e2e && npm run test:unit",
-    "test:unit": "umi-test 'test.(j|t)s' --coverage",
-    "test:e2e": "umi-test 'e2e.(j|t)s'",
-    "debug": "umi-test",
-    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty \"./packages/preset-dumi/src\"",
-    "prettier": "prettier -c --write \"**/*\"",
-    "publish": "umi-test && npm run changelog && npm run build && lerna publish -m \"chore: publish\"",
-    "now-build": "echo \"hello\""
-  },
-  "repository": {
-    "type": "github",
-    "url": "git+https://github.com/whyzsm/sunshine.git"
+    "deploy": "gh-pages -d dist",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
